@@ -1,0 +1,15 @@
+services:
+  web:
+    container_name: keycloak_nuxt_sample
+    build: nuxt
+    volumes:
+      - ./src:/app:cached
+    ports:
+      - "3000:3000"
+      - "24678:24678"
+    tty: true
+    environment:
+      - HOST=0.0.0.0
+      - port=80
+      - CHOKIDAR_USEPOLLING=true
+    command: sh -c "npm run dev"
