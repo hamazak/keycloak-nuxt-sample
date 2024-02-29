@@ -3,9 +3,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      keycloakUrl: '',
-      keycloakRealm: '',
-      keycloakClientId: ''
+      keycloakUrl: process.env.KEYCLOAK_URL,
+      keycloakRealm: process.env.KEYCLOAK_REALM,
+      keycloakClientId: process.env.KEYCLOAK_CLIENT_ID
     }
   }
 })
